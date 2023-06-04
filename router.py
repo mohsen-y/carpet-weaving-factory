@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import Dict, List
 import algorithms, schemas
-import json, copy
+import json, copy, os
 
 router = APIRouter(prefix="/api", tags=["Algorithms"])
 
@@ -11,7 +11,7 @@ router = APIRouter(prefix="/api", tags=["Algorithms"])
 )
 def get_list_of_carpets():
     return json.load(
-        open(file="carpets.json", mode="r")
+        open(file=os.path.join("database", "carpets.json"), mode="r")
     )
 
 
@@ -40,7 +40,7 @@ def purchase_maximum_number_of_carpets(
     budget: int
 ):
     carpets = json.load(
-        open(file="carpets.json", mode="r")
+        open(file=os.path.join("database", "carpets.json"), mode="r")
     )
 
     return algorithms.buy_maximum_carpets(
@@ -57,7 +57,7 @@ def find_nearest_factory_branch(
     start_point: str
 ):
     coordinates = json.load(
-        open(file="coordinates.json", mode="r")
+        open(file=os.path.join("database", "coordinates.json"), mode="r")
     )
     city_map = coordinates["city_map"]
     branches = coordinates["branches"]
