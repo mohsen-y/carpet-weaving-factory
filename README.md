@@ -1,1 +1,1 @@
-# carpet-weaving-factory
+# Carpet Weaving Factory
