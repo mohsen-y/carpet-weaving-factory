@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Carpet A",
+        "price": 100,
+    },
+    {
+        "name": "Carpet B",
+        "price": 1200,
+    },
+    {
+        "name": "Carpet C",
+        "price": 500
+    },
+    {
+        "name": "Carpet D",
+        "price": 790
+    },
+    {
+        "name": "Carpet E",
+        "price": 480
+    },
+    {
+        "name": "Carpet F",
+        "price": 1500
+    },
+    {
+        "name": "Carpet G",
+        "price": 650
+    },
+    {
+        "name": "Carpet H",
+        "price": 120
+    },
+    {
+        "name": "Carpet I",
+        "price": 90
+    },
+    {
+        "name": "Carpet J",
+        "price": 860
+    }
+]

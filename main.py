@@ -1,5 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
+from router import router
 import uvicorn
 
 app = FastAPI(swagger_ui_parameters={"docExpansion": "none"})
@@ -15,6 +16,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(router)
 
 if __name__ == "__main__":
     uvicorn.run(
