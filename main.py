@@ -6,7 +6,7 @@ import uvicorn
 app = FastAPI(swagger_ui_parameters={"docExpansion": "none"})
 
 origins = [
-    "http://localhost:8000",
+    "*",
 ]
 
 app.add_middleware(
