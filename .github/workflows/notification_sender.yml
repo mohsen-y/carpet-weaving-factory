@@ -1,0 +1,15 @@
+name: Notification-Sender
+
+on: push
+
+jobs:
+  notification-sender:
+    name: Send notifications for push actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Someone pushed to the {{ EVENT_PAYLOAD.repository.full_name }} repository.'
