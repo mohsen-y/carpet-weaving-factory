@@ -1,6 +1,9 @@
+from algorithms.dijkstra_shortest_paths import dijkstra_shortest_paths
+from algorithms.maximum_carpets import buy_maximum_carpets
+from algorithms.graph_coloring import graph_coloring
 from fastapi import APIRouter
 from typing import Dict, List
-import algorithms, schemas
+from schemas import schemas
 import json, copy, os
 
 router = APIRouter(prefix="/api", tags=["Algorithms"])
@@ -22,7 +25,7 @@ def get_list_of_carpets():
 def assign_colors_to_areas(
     adjacency_list: Dict
 ):
-    colored_areas, min_colors = algorithms.graph_coloring(
+    colored_areas, min_colors = graph_coloring(
         graph=adjacency_list
     )
 
@@ -43,7 +46,7 @@ def purchase_maximum_number_of_carpets(
         open(file=os.path.join("database", "carpets.json"), mode="r")
     )
 
-    return algorithms.buy_maximum_carpets(
+    return buy_maximum_carpets(
         carpets=carpets,
         budget=budget,
     )
@@ -70,7 +73,7 @@ def find_nearest_factory_branch(
             distance=0,
         )
 
-    shortest_paths = algorithms.dijkstra_shortest_paths(
+    shortest_paths = dijkstra_shortest_paths(
         graph=city_map,
         start_node=start_point,
         target_nodes=copy.deepcopy(branches),

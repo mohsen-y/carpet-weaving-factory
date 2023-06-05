@@ -1,6 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
+from routers.algorithms import router
 from fastapi import FastAPI
-from router import router
 import uvicorn
 
 app = FastAPI(swagger_ui_parameters={"docExpansion": "none"})
