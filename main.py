@@ -5,9 +5,7 @@ import uvicorn
 
 app = FastAPI(swagger_ui_parameters={"docExpansion": "none"})
 
-origins = [
-    "*",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
