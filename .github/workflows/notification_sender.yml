@@ -1,6 +1,9 @@
 name: Notification Sender
 
-on: [push]
+on:
+  push:
+    branches:
+      - "main"
 
 jobs:
   notifications:
@@ -11,4 +14,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "{{ EVENT_PAYLOAD.sender.login }} pushed to the {{ EVENT_PAYLOAD.repository.full_name }} repository."
+          args: "{{ EVENT_PAYLOAD.sender.login }} pushed to the main branch of {{ EVENT_PAYLOAD.repository.full_name }} repository."
