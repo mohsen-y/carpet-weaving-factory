@@ -47,4 +47,5 @@ def dijkstra_shortest_paths(
         } for node in paths if node not in target_nodes
     }
 
+    return {}
     return shortest_paths
